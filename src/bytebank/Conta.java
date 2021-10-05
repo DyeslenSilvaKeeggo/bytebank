@@ -54,24 +54,19 @@ public class Conta {
 	}
 	
 	
-	public boolean saca(double valor) {
-		 if(this.saldo >=valor) {
-			 this.saldo = this.saldo - valor;
-			 return true;
-		 }else {
-			 return false;
+	public void saca(double valor) {
+		 if(this.saldo<valor) {
+			throw new SaldoInsulficienteException("O Saldo :" +this.saldo+", Valor"+ valor);
 		 }
+		 
+		 this.saldo = this.saldo - valor;
+			
 	}
 	
 	
-	public boolean transfere(double valor, Conta destino) {
-		if(this.saldo >=valor) {
-			this.saldo -= valor;
+	public void transfere(double valor, Conta destino) {
+		saca(valor);
 			destino.deposita(valor);
-			return true;
-		}else {
-			return false;
-		}
 	}
 	
 	public double getSaldo() {

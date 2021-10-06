@@ -1,5 +1,6 @@
 package br.com.bytebank.teste;
 
+import br.com.bytebank.especial.ContaEspecial;
 import br.com.bytebank.modelo.ContaCorrente;
 import br.com.bytebank.modelo.ContaPoupanca;
 import br.com.bytebank.modelo.SaldoInsulficienteException;
